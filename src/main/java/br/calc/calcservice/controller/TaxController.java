@@ -17,16 +17,16 @@ public class TaxController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(TaxController.class);
 	
-	@GetMapping("/icms/{valor}")
-    public BigDecimal calcIcms(@PathVariable("value") BigDecimal valor) {
+	@GetMapping("/icms/{value}")
+    public BigDecimal calcIcms(@PathVariable("value") BigDecimal value) {
 		
-		BigDecimal result = Tax.calcIcms().calc(valor);
+		BigDecimal result = Tax.calcIcms().calc(value);
 		
         LOGGER.info("ICMS: "+ result);
         return result;
     }
     
-	@GetMapping("/iss/{valor}")
+	@GetMapping("/iss/{value}")
     public BigDecimal calcIss(@PathVariable("value") BigDecimal value) {
 		
 		BigDecimal result = Tax.calcIss().calc(value);
