@@ -20,7 +20,7 @@ public class TaxController {
 	@GetMapping("/icms/{value}")
     public BigDecimal calcIcms(@PathVariable("value") BigDecimal value) {
 		
-		BigDecimal result = Tax.calcIcms().calc(value);
+		var result = Tax.calcIcms().calc(value);
 		
         LOGGER.info("ICMS: "+ result);
         return result;
@@ -29,7 +29,7 @@ public class TaxController {
 	@GetMapping("/iss/{value}")
     public BigDecimal calcIss(@PathVariable("value") BigDecimal value) {
 		
-		BigDecimal result = Tax.calcIss().calc(value);
+		var result = Tax.calcIss().calc(value);
 		
         LOGGER.info("ISS: "+ result);
         return result;
